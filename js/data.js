@@ -1,0 +1,42 @@
+export const printers = [
+  {
+    id: 1,
+    model: "HP LaserJet M404",
+    location: "Recepção",
+    toner: 78,
+    imagingUnit: 65,
+    online: true,
+  },
+  {
+    id: 2,
+    model: "HP LaserJet M404",
+    location: "Enfermaria",
+    toner: 8,
+    imagingUnit: 46,
+    online: true,
+  },
+  {
+    id: 3,
+    model: "HP LaserJet M428",
+    location: "Administração",
+    toner: 1,
+    imagingUnit: 9,
+    online: true,
+  },
+  {
+    id: 4,
+    model: "HP LaserJet M404",
+    location: "Financeiro",
+    toner: null,
+    imagingUnit: 15,
+    online: true,
+  },
+  {
+    id: 5,
+    model: "HP LaserJet M428",
+    location: "Farmácia",
+    toner: null,
+    imagingUnit: null,
+    online: false,
+  },
+];

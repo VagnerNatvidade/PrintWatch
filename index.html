@@ -1,0 +1,493 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#0c1423" />
+    <title>PrintWatch | Monitoring Center</title>
+    <link rel="stylesheet" href="./css/style.css" />
+    <script type="module" src="./js/main.js" defer></script>
+  </head>
+  <body>
+    <div class="app-shell">
+      <aside class="sidebar" id="sidebar" aria-label="Navegação principal">
+        <a class="brand" href="#dashboard" aria-label="PrintWatch - Dashboard">
+          <span class="brand-icon" aria-hidden="true">▣</span>
+          <span
+            ><strong>Print<span>Watch</span></strong
+            ><small>Monitoring Center</small></span
+          >
+        </a>
+        <nav class="side-nav" aria-label="Páginas">
+          <a
+            class="nav-link is-active"
+            href="#dashboard"
+            data-page="dashboard"
+            aria-current="page"
+            ><span class="nav-icon" aria-hidden="true">▦</span> Dashboard</a
+          >
+          <a class="nav-link" href="#printers" data-page="printers"
+            ><span class="nav-icon" aria-hidden="true">▤</span> Impressoras</a
+          >
+          <a class="nav-link" href="#alerts" data-page="alerts"
+            ><span class="nav-icon" aria-hidden="true">⚠</span> Alertas
+            <span class="nav-count" id="nav-alert-count">3</span></a
+          >
+        </nav>
+        <div class="sidebar-bottom">
+          <div class="company-switch">
+            <span aria-hidden="true">▥</span>
+            <div>
+              <strong>Empresa Demo</strong><small>Ambiente de simulação</small>
+            </div>
+          </div>
+          <div class="profile">
+            <span class="avatar">PW</span>
+            <div><strong>Operador</strong><small>Administrador</small></div>
+          </div>
+        </div>
+      </aside>
+
+      <div class="main-area">
+        <header class="topbar">
+          <button
+            class="icon-button mobile-menu-toggle"
+            id="menu-toggle"
+            type="button"
+            aria-label="Abrir menu"
+            aria-expanded="false"
+            aria-controls="sidebar"
+          >
+            ☰
+          </button>
+          <div class="topbar-heading">
+            <span class="eyebrow">EMPRESA DEMO / MONITORAMENTO</span>
+            <h1 id="page-title">Dashboard</h1>
+          </div>
+          <div class="topbar-actions">
+            <span class="connection-indicator"
+              ><span class="status-dot"></span> Dados simulados</span
+            >
+            <button
+              class="button button-outline"
+              id="refresh-button"
+              type="button"
+            >
+              <span aria-hidden="true">↻</span
+              ><span class="button-label">Atualizar</span>
+            </button>
+            <button
+              class="icon-button theme-toggle"
+              id="theme-toggle"
+              type="button"
+              aria-label="Ativar modo claro"
+              title="Alternar tema"
+            >
+              ☀
+            </button>
+          </div>
+        </header>
+
+        <main class="content">
+          <section
+            class="page"
+            id="dashboard"
+            aria-labelledby="dashboard-heading"
+          >
+            <div class="section-heading">
+              <div>
+                <p class="eyebrow">VISÃO GERAL</p>
+                <h2 id="dashboard-heading">Visão geral do parque</h2>
+                <p>Indicadores e equipamentos que exigem atenção.</p>
+              </div>
+              <span class="last-update" id="last-update"
+                >Última atualização: demonstração</span
+              >
+            </div>
+            <div class="stats-grid">
+              <article class="stat-card stat-blue">
+                <span class="stat-icon">▣</span>
+                <div>
+                  <p>Total de impressoras</p>
+                  <strong id="stat-total">5</strong
+                  ><small>Equipamentos cadastrados</small>
+                </div>
+              </article>
+              <article class="stat-card stat-green">
+                <span class="stat-icon">✓</span>
+                <div>
+                  <p>Em operação</p>
+                  <strong id="stat-online">4</strong
+                  ><small>Respondendo normalmente</small>
+                </div>
+              </article>
+              <article class="stat-card stat-amber">
+                <span class="stat-icon">!</span>
+                <div>
+                  <p>Alertas médios</p>
+                  <strong id="stat-warning">2</strong
+                  ><small>Acompanhar suprimentos</small>
+                </div>
+              </article>
+              <article class="stat-card stat-red">
+                <span class="stat-icon">!</span>
+                <div>
+                  <p>Alertas críticos</p>
+                  <strong id="stat-critical">1</strong
+                  ><small>Prioridade de atendimento</small>
+                </div>
+              </article>
+            </div>
+
+            <div class="overview-grid">
+              <article class="panel">
+                <div class="panel-heading">
+                  <div>
+                    <h3>Estado dos suprimentos</h3>
+                    <p>Média ilustrativa dos equipamentos</p>
+                  </div>
+                </div>
+                <div class="supply-row">
+                  <div class="supply-label">
+                    <span class="supply-icon">◉</span>
+                    <div><strong>Toner</strong><small>Média geral</small></div>
+                  </div>
+                  <div class="supply-progress">
+                    <div class="progress-track">
+                      <span
+                        class="progress-fill fill-green"
+                        style="width: 68%"
+                      ></span>
+                    </div>
+                  </div>
+                  <strong class="supply-value">68%</strong>
+                </div>
+                <div class="supply-row">
+                  <div class="supply-label">
+                    <span class="supply-icon">▧</span>
+                    <div>
+                      <strong>Unidade de imagem</strong
+                      ><small>Média geral</small>
+                    </div>
+                  </div>
+                  <div class="supply-progress">
+                    <div class="progress-track">
+                      <span
+                        class="progress-fill fill-cyan"
+                        style="width: 72%"
+                      ></span>
+                    </div>
+                  </div>
+                  <strong class="supply-value">72%</strong>
+                </div>
+              </article>
+              <article class="panel">
+                <div class="panel-heading">
+                  <div>
+                    <h3>Alertas recentes</h3>
+                    <p>Equipamentos que precisam de atenção</p>
+                  </div>
+                  <a class="text-link" href="#alerts" data-page="alerts"
+                    >Ver todos →</a
+                  >
+                </div>
+                <div class="alert-list" id="recent-alerts">
+                  <div class="alert-item">
+                    <span class="alert-printer-icon">▣</span>
+                    <div class="alert-info">
+                      <strong>HP LaserJet — Enfermaria</strong
+                      ><small>Toner em 8%</small>
+                    </div>
+                    <span class="badge badge-warning">Médio</span>
+                  </div>
+                  <div class="alert-item">
+                    <span class="alert-printer-icon">▣</span>
+                    <div class="alert-info">
+                      <strong>HP MFP — Administração</strong
+                      ><small>Toner em 1%</small>
+                    </div>
+                    <span class="badge badge-critical">Crítico</span>
+                  </div>
+                  <div class="alert-item">
+                    <span class="alert-printer-icon">▣</span>
+                    <div class="alert-info">
+                      <strong>HP LaserJet — Financeiro</strong
+                      ><small>Unidade de imagem em 15%</small>
+                    </div>
+                    <span class="badge badge-warning">Médio</span>
+                  </div>
+                </div>
+              </article>
+            </div>
+            <div class="section-heading compact">
+              <div>
+                <h2>Impressoras em destaque</h2>
+                <p>Equipamentos com suprimentos que exigem atenção.</p>
+              </div>
+              <a class="text-link" href="#printers" data-page="printers"
+                >Todas as impressoras →</a
+              >
+            </div>
+            <div class="printer-grid" id="featured-printers">
+              <article class="printer-card">
+                <div class="printer-card-top">
+                  <span class="printer-illustration" aria-hidden="true">▣</span
+                  ><span class="badge badge-warning">Médio</span>
+                </div>
+                <h3>HP LaserJet</h3>
+                <p>Enfermaria</p>
+                <div class="meter">
+                  <div class="meter-label">
+                    <span>Toner</span><strong class="text-warning">8%</strong>
+                  </div>
+                  <div class="progress-track">
+                    <span
+                      class="progress-fill fill-amber"
+                      style="width: 8%"
+                    ></span>
+                  </div>
+                </div>
+                <div class="meter">
+                  <div class="meter-label">
+                    <span>Unidade de imagem</span><strong>46%</strong>
+                  </div>
+                  <div class="progress-track">
+                    <span
+                      class="progress-fill fill-green"
+                      style="width: 46%"
+                    ></span>
+                  </div>
+                </div>
+              </article>
+              <article class="printer-card">
+                <div class="printer-card-top">
+                  <span class="printer-illustration" aria-hidden="true">▣</span
+                  ><span class="badge badge-critical">Crítico</span>
+                </div>
+                <h3>HP MFP</h3>
+                <p>Administração</p>
+                <div class="meter">
+                  <div class="meter-label">
+                    <span>Toner</span><strong class="text-critical">1%</strong>
+                  </div>
+                  <div class="progress-track">
+                    <span
+                      class="progress-fill fill-red"
+                      style="width: 1%"
+                    ></span>
+                  </div>
+                </div>
+                <div class="meter">
+                  <div class="meter-label">
+                    <span>Unidade de imagem</span
+                    ><strong class="text-warning">9%</strong>
+                  </div>
+                  <div class="progress-track">
+                    <span
+                      class="progress-fill fill-amber"
+                      style="width: 9%"
+                    ></span>
+                  </div>
+                </div>
+              </article>
+              <article class="printer-card">
+                <div class="printer-card-top">
+                  <span class="printer-illustration" aria-hidden="true">▣</span
+                  ><span class="badge badge-warning">Médio</span>
+                </div>
+                <h3>HP LaserJet</h3>
+                <p>Financeiro</p>
+                <div class="meter">
+                  <div class="meter-label">
+                    <span>Toner</span><strong>42%</strong>
+                  </div>
+                  <div class="progress-track">
+                    <span
+                      class="progress-fill fill-green"
+                      style="width: 42%"
+                    ></span>
+                  </div>
+                </div>
+                <div class="meter">
+                  <div class="meter-label">
+                    <span>Unidade de imagem</span
+                    ><strong class="text-warning">15%</strong>
+                  </div>
+                  <div class="progress-track">
+                    <span
+                      class="progress-fill fill-amber"
+                      style="width: 15%"
+                    ></span>
+                  </div>
+                </div>
+              </article>
+            </div>
+          </section>
+
+          <section
+            class="page"
+            id="printers"
+            aria-labelledby="printers-heading"
+            hidden
+          >
+            <div class="section-heading">
+              <div>
+                <p class="eyebrow">INVENTÁRIO</p>
+                <h2 id="printers-heading">Todas as impressoras</h2>
+                <p>Consulte equipamentos, setores e suprimentos.</p>
+              </div>
+              <span class="badge badge-neutral">Dados simulados</span>
+            </div>
+            <div class="toolbar">
+              <label class="search-field"
+                ><span aria-hidden="true">⌕</span
+                ><input
+                  id="printer-search"
+                  type="search"
+                  placeholder="Buscar por nome, setor ou modelo..."
+                  aria-label="Buscar impressoras" /></label
+              ><select
+                id="printer-status-filter"
+                aria-label="Filtrar por status"
+              >
+                <option value="all">Todos os status</option>
+                <option value="normal">Normal</option>
+                <option value="warning">Alerta médio</option>
+                <option value="critical">Crítico</option>
+                <option value="offline">Sem comunicação</option>
+              </select>
+            </div>
+            <div class="table-wrap panel">
+              <table class="data-table">
+                <thead>
+                  <tr>
+                    <th>Equipamento / setor</th>
+                    <th>Toner</th>
+                    <th>Unidade de imagem</th>
+                    <th>Comunicação</th>
+                    <th>Prioridade</th>
+                  </tr>
+                </thead>
+                <tbody id="printers-table-body">
+                  <tr>
+                    <td><strong>HP LaserJet</strong><small>Recepção</small></td>
+                    <td>78%</td>
+                    <td>65%</td>
+                    <td><span class="online-label">● Online</span></td>
+                    <td><span class="badge badge-normal">Normal</span></td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <strong>HP LaserJet</strong><small>Enfermaria</small>
+                    </td>
+                    <td>8%</td>
+                    <td>46%</td>
+                    <td><span class="online-label">● Online</span></td>
+                    <td><span class="badge badge-warning">Médio</span></td>
+                  </tr>
+                  <tr>
+                    <td><strong>HP MFP</strong><small>Administração</small></td>
+                    <td>1%</td>
+                    <td>9%</td>
+                    <td><span class="online-label">● Online</span></td>
+                    <td><span class="badge badge-critical">Crítico</span></td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <strong>HP LaserJet</strong><small>Financeiro</small>
+                    </td>
+                    <td>42%</td>
+                    <td>15%</td>
+                    <td><span class="online-label">● Online</span></td>
+                    <td><span class="badge badge-warning">Médio</span></td>
+                  </tr>
+                  <tr>
+                    <td><strong>HP MFP</strong><small>Farmácia</small></td>
+                    <td>—</td>
+                    <td>—</td>
+                    <td><span class="offline-label">● Offline</span></td>
+                    <td>
+                      <span class="badge badge-neutral">Sem comunicação</span>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <p class="empty-state" id="printers-empty" hidden>
+              Nenhuma impressora encontrada.
+            </p>
+          </section>
+
+          <section
+            class="page"
+            id="alerts"
+            aria-labelledby="alerts-heading"
+            hidden
+          >
+            <div class="section-heading">
+              <div>
+                <p class="eyebrow">CENTRAL DE ATENÇÃO</p>
+                <h2 id="alerts-heading">Alertas de suprimentos</h2>
+                <p>Priorize as impressoras que precisam de acompanhamento.</p>
+              </div>
+            </div>
+            <div class="alert-tabs" role="group" aria-label="Filtrar alertas">
+              <button
+                class="filter-button is-active"
+                type="button"
+                data-alert-filter="all"
+                aria-pressed="true"
+              >
+                Todos</button
+              ><button
+                class="filter-button"
+                type="button"
+                data-alert-filter="warning"
+                aria-pressed="false"
+              >
+                Médios</button
+              ><button
+                class="filter-button"
+                type="button"
+                data-alert-filter="critical"
+                aria-pressed="false"
+              >
+                Críticos
+              </button>
+            </div>
+            <div class="alert-cards" id="alerts-container">
+              <article class="alert-card">
+                <span class="badge badge-warning">Médio</span>
+                <h3>HP LaserJet — Enfermaria</h3>
+                <p>Toner em 8% · Unidade de imagem em 46%</p>
+              </article>
+              <article class="alert-card">
+                <span class="badge badge-critical">Crítico</span>
+                <h3>HP MFP — Administração</h3>
+                <p>Toner em 1% · Unidade de imagem em 9%</p>
+              </article>
+              <article class="alert-card">
+                <span class="badge badge-warning">Médio</span>
+                <h3>HP LaserJet — Financeiro</h3>
+                <p>Toner em 42% · Unidade de imagem em 15%</p>
+              </article>
+            </div>
+            <p class="empty-state" id="alerts-empty" hidden>
+              Nenhum alerta para este filtro.
+            </p>
+            <p class="helper-note">
+              Regra inicial: toner de 2% a 10% = médio; 1% ou menos = crítico.
+              Unidade de imagem de 1% a 20% = médio; 0% = crítico (provisório).
+              Falhas de comunicação são tratadas separadamente.
+            </p>
+          </section>
+        </main>
+
+        <footer class="footer">
+          PrintWatch · Ambiente demonstrativo · Nenhuma impressora real
+          conectada
+        </footer>
+      </div>
+    </div>
+  </body>
+</html>
